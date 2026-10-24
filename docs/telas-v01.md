@@ -153,3 +153,68 @@ No celular, será recolhido em um menu.
 As cores serão consumidas exclusivamente por variáveis CSS com var().
 Os valores da paleta ficarão centralizados no arquivo global de estilos,
 conforme docs/padrao-visual.md.
+
+## Organização visual das telas de autenticação
+
+As telas terão um cartão centralizado, com largura máxima de 420px.
+No celular, o cartão ocupará a largura disponível, mantendo margens.
+
+### Login — ordem dos elementos
+
+1. Nome GestãoService.
+2. Título Entrar.
+3. Campo E-mail.
+4. Campo Senha.
+5. Link Esqueci minha senha.
+6. Botão Entrar, ocupando a largura do cartão.
+7. Área para mensagem de erro.
+
+### Recuperação de senha — ordem dos elementos
+
+1. Nome GestãoService.
+2. Título Recuperar senha.
+3. Instrução para informar o e-mail.
+4. Campo E-mail.
+5. Botão Enviar link.
+6. Mensagem de confirmação ou erro.
+7. Link Voltar para o login.
+
+### Redefinição de senha — ordem dos elementos
+
+1. Nome GestãoService.
+2. Título Definir nova senha.
+3. Campo Nova senha.
+4. Campo Confirmar senha.
+5. Botão Salvar nova senha.
+6. Mensagem de confirmação ou erro.
+
+Se o link estiver inválido ou expirado, apresentar uma explicação
+e uma opção para solicitar outro link.
+
+## Organização visual do formulário de cliente
+
+A página utilizará a mesma barra superior e navegação da listagem.
+
+O formulário terá largura máxima de 640px e campos em uma coluna.
+
+Ordem dos elementos:
+
+1. Link Voltar para clientes.
+2. Título Novo cliente ou Editar cliente.
+3. Campo Nome, identificado como obrigatório.
+4. Campo E-mail, identificado como opcional.
+5. Campo Telefone, identificado como opcional.
+6. Área para erro geral de salvamento.
+7. Botões Cancelar e Salvar.
+
+Erros de validação aparecerão abaixo dos respectivos campos.
+Falhas no salvamento não apagarão os dados preenchidos.
+
+## Regras visuais compartilhadas
+
+- Todas as cores serão aplicadas por variáveis CSS com var().
+- Valores de cor ficarão centralizados na definição da paleta.
+- Botões, campos e mensagens seguirão docs/padrao-visual.md.
+- Todos os controles terão indicação de foco por teclado.
+- Mensagens de erro não dependerão somente da cor.
+- Estados de envio terão indicação textual de progresso.

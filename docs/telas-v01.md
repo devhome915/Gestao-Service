@@ -122,3 +122,34 @@ Comportamentos:
 - Modais deverão controlar e devolver o foco.
 - Em telas pequenas, os formulários ocuparão a largura disponível.
 - Tabelas deverão permitir consulta sem cortar as ações.
+
+  ## Esboço da tela de Clientes
+
+```mermaid
+flowchart TD
+    A["Barra superior: GestãoService, empresa, usuário e Sair"]
+    A --> B["Menu lateral: Clientes"]
+    A --> C["Área principal"]
+    C --> D["Título Clientes e botão Novo cliente"]
+    D --> E["Busca por nome e filtro Ativos ou Arquivados"]
+    E --> F["Tabela: Nome, E-mail, Telefone e Ações"]
+    F --> G["Paginação"]
+```
+
+O diagrama representa a hierarquia dos elementos.
+No computador, o menu ficará ao lado da área principal.
+No celular, será recolhido em um menu.
+
+### Comportamento das ações
+
+- Novo cliente abre a página de cadastro.
+- Editar abre o formulário preenchido.
+- Arquivar abre um modal de confirmação.
+- Restaurar devolve o cliente à lista de ativos.
+- Sair encerra a sessão.
+
+### Aplicação do padrão visual
+
+As cores serão consumidas exclusivamente por variáveis CSS com var().
+Os valores da paleta ficarão centralizados no arquivo global de estilos,
+conforme docs/padrao-visual.md.

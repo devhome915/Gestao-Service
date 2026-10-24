@@ -218,3 +218,47 @@ Falhas no salvamento não apagarão os dados preenchidos.
 - Todos os controles terão indicação de foco por teclado.
 - Mensagens de erro não dependerão somente da cor.
 - Estados de envio terão indicação textual de progresso.
+
+## Fluxos de sucesso e falha
+
+### Login
+
+- Sucesso: autenticar e abrir a lista de clientes.
+- Credenciais inválidas: manter o e-mail e apresentar mensagem genérica.
+- Falha de conexão: informar o problema e permitir nova tentativa.
+- Durante o envio: indicar progresso e impedir envio repetido.
+
+### Recuperação de senha
+
+- Sucesso: apresentar confirmação genérica de envio da solicitação.
+- E-mail com formato inválido: apresentar erro junto ao campo.
+- Falha de conexão: informar o problema e permitir nova tentativa.
+
+### Redefinição de senha
+
+- Sucesso: confirmar a alteração e orientar o retorno ao login.
+- Senhas diferentes ou fora dos requisitos: apresentar erro nos campos.
+- Link inválido ou expirado: permitir solicitar um novo link.
+- Falha ao salvar: apresentar mensagem e permitir nova tentativa.
+
+### Lista de clientes
+
+- Sucesso: apresentar os clientes e a paginação.
+- Carregamento: apresentar indicador de progresso.
+- Lista vazia: apresentar explicação e botão Novo cliente.
+- Busca sem resultados: orientar a alteração dos filtros.
+- Falha: apresentar mensagem e botão Tentar novamente.
+
+### Cadastro e edição
+
+- Sucesso: retornar à listagem e apresentar confirmação.
+- Campos inválidos: apresentar erros junto aos campos.
+- Falha ao salvar: preservar os dados e permitir nova tentativa.
+- Cancelamento: retornar à lista sem salvar as alterações.
+
+### Arquivamento e restauração
+
+- Cancelar no modal: fechar sem alterar o cliente.
+- Arquivamento concluído: atualizar a lista e apresentar confirmação.
+- Restauração concluída: atualizar a lista e apresentar confirmação.
+- Falha: manter o estado anterior e permitir nova tentativa.

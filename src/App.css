@@ -1,0 +1,31 @@
+.welcome {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.welcome__card {
+  width: 100%;
+  max-width: 640px;
+  padding: 32px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-surface);
+}
+
+.welcome__card h1 {
+  margin: 0 0 16px;
+  color: var(--color-primary);
+  font-size: 28px;
+}
+
+.welcome__card p {
+  margin: 0 0 24px;
+  color: var(--color-text-secondary);
+}
+
+.welcome__status {
+  color: var(--color-success);
+  font-size: 14px;
+}

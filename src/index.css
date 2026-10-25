@@ -1,18 +1,8 @@
+@import './styles/tokens.css';
+
 :root {
   font-family: Arial, sans-serif;
   line-height: 1.5;
-
-  --color-primary: #1d4ed8;
-  --color-primary-hover: #1e40af;
-  --color-background: #f8fafc;
-  --color-surface: #ffffff;
-  --color-text: #0f172a;
-  --color-text-secondary: #475569;
-  --color-border: #cbd5e1;
-  --color-input-border: #64748b;
-  --color-success: #166534;
-  --color-danger: #b91c1c;
-  --color-focus: #1d4ed8;
 
   color: var(--color-text);
   background-color: var(--color-background);

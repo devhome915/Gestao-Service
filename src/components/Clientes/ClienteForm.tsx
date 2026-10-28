@@ -56,8 +56,9 @@ function ClienteForm({ onSave, onCancel }: ClienteFormProps) {
         name="phone"
         type="tel"
         autoComplete="tel"
+        inputMode="numeric"
         value={phone}
-        onChange={(event) => setPhone(event.target.value)}
+        onChange={(event) => setPhone(event.target.value.replace(/\D/g, ''))}
       />
 
       <div className="clientes-form__actions">

@@ -20,12 +20,22 @@ function ClienteForm({ onSave, onCancel }: ClienteFormProps) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
+  const [nameError, setNameError] = useState('')
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
+    const trimmedName = name.trim()
+
+    if (!trimmedName) {
+      setNameError('Informe o nome do cliente.')
+      return
+    }
+
+    setNameError('')
+
     onSave({
-      name: name.trim(),
+      name: trimmedName,
       email: email.trim(),
       phone: phone.trim(),
     })
@@ -40,6 +50,7 @@ function ClienteForm({ onSave, onCancel }: ClienteFormProps) {
         value={name}
         onChange={(event) => setName(event.target.value)}
         required
+        error={nameError}
       />
 
       <Input

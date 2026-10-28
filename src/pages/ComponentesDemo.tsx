@@ -2,11 +2,15 @@ import { useState } from 'react'
 
 import Button from '../components/Button/Button'
 import Input from '../components/Input/Input'
+import Modal from '../components/Modal/Modal'
+import Toast from '../components/Toast/Toast'
 
 import '../components/ComponentesDemo/ComponentesDemo.css'
 
 function ComponentesDemo() {
   const [loading, setLoading] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false)
+  const [toastMessage, setToastMessage] = useState('')
 
   return (
     <section className="componentes" aria-labelledby="componentes-title">
@@ -51,6 +55,35 @@ function ComponentesDemo() {
 
         <Input label="Campo desabilitado" disabled />
       </section>
+
+      <section className="componentes__section" aria-labelledby="modal-title">
+        <h2 id="modal-title">Modal</h2>
+
+        <Button onClick={() => setModalOpen(true)}>
+          Abrir modal
+        </Button>
+
+        <Modal
+          open={modalOpen}
+          title="Demonstração de modal"
+          onClose={() => setModalOpen(false)}
+        >
+          <p>Use Cancelar ou Escape para fechar esta janela.</p>
+        </Modal>
+      </section>
+
+      <section className="componentes__section" aria-labelledby="toast-title">
+        <h2 id="toast-title">Toast</h2>
+
+        <Button onClick={() => setToastMessage('Cliente salvo com sucesso.')}>
+          Mostrar mensagem
+        </Button>
+      </section>
+
+      <Toast
+        message={toastMessage}
+        onDismiss={() => setToastMessage('')}
+      />
     </section>
   )
 }
